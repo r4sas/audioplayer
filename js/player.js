@@ -54,6 +54,10 @@ OCA.Audioplayer.Player = {
         }
         this.html5Audio.play();
         document.getElementById('sm2-bar-ui').classList.add('playing');
+        // update sidebar information if it shown
+        if (document.getElementById('app-sidebar').dataset.trackid !== '') {
+            OCA.Audioplayer.Sidebar.showSidebar(undefined, trackToPlay.dataset.trackid);
+        }
         OCA.Audioplayer.UI.indicateCurrentPlayingTrack();
     },
 
